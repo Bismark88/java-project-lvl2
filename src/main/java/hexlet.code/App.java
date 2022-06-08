@@ -9,6 +9,15 @@ import picocli.CommandLine.Parameters;
 
 public class App implements Runnable {
 
+    @Parameters(index = "filepath1", description = "path to first file")
+    private int filepath1;
+
+    @Parameters(index = "filepath2", description = "path to second file")
+    private int filepath2;
+
+    @Option(names = {"-f", "--format"}, defaultValue = "stylish", description = "output format [default: stylish]")
+    private String format = "";
+
     @Option(names = { "-h", "--help" }, usageHelp = true, description = "Show this help message and exit.")
     private boolean helpRequested = false;
 
